@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
   try {
     const biblia = await Biblia.find();
 
-    return res.send({ biblia });
+    return res.send(biblia);
   } catch (err) {
     return res.status(400).send({ error: 'Erro ao listar Bíblia.'});
   }
