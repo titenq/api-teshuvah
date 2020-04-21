@@ -1,28 +1,30 @@
 const mongoose = require('../../database');
 
 const BibliaSchema = new mongoose.Schema({
-  he: {
-    livro: String,
-    capitulo: String,
-    versiculo: String,
-    verso: String,
-    require: false
-  },
-  pt: {
-    livro: String,
-    capitulo: String,
-    versiculo: String,
-    verso: String,
-    require: false
-  },
-  tr: {
-    livro: String,
-    capitulo: String,
-    versiculo: String,
-    verso: String,
-    require: false
-  },
-  comentario: String
+  livro: String,
+  capitulo: String,
+  versiculo: String,
+  verso: {
+    he: {
+      livro: String,
+      capitulo: String,
+      versiculo: String,
+      verso: String
+    },
+    pt: {
+      livro: String,
+      capitulo: String,
+      versiculo: String,
+      verso: String
+    },
+    tr: {
+      livro: String,
+      capitulo: String,
+      versiculo: String,
+      verso: String
+    },
+    comentario: String
+  }
 },
 { collection: 'biblia' });
 

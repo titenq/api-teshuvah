@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 
     return res.send(biblia);
   } catch (err) {
-    return res.status(400).send({ error: 'Erro ao listar Bíblia.'});
+    return res.status(400).send({ error: 'Erro ao listar a Bíblia.' });
   }
 });
 
@@ -21,17 +21,17 @@ router.get('/:bibliaId', async (req, res) => {
 
     return res.send({ verso });
   } catch (err) {
-    return res.status(400).send({ error: 'Erro ao listar verso.'});
+    return res.status(400).send({ error: 'Erro ao listar verso.' });
   }
 });
 
 router.post('/', authMiddleware, async (req, res) => {
   try {
     const verso = await Biblia.create(req.body);
-
+    
     return res.send({ verso });
   } catch (err) {
-    return res.status(400).send({ error: 'Erro ao criar novo verso.'});
+    return res.status(400).send({ error: 'Erro ao criar novo verso.' });
   }
 });
 
@@ -41,7 +41,7 @@ router.patch('/:bibliaId', authMiddleware, async (req, res) => {
 
     return res.send({ verso });
   } catch (err) {
-    return res.status(400).send({ error: 'Erro ao editar verso.'});
+    return res.status(400).send({ error: 'Erro ao editar verso.' });
   }
 });
 
@@ -51,7 +51,7 @@ router.delete('/:bibliaId', authMiddleware, async (req, res) => {
 
     return res.send();
   } catch (err) {
-    return res.status(400).send({ error: 'Erro ao deletar verso.'});
+    return res.status(400).send({ error: 'Erro ao deletar verso.' });
   }
 });
 
